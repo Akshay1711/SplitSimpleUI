@@ -1,0 +1,6 @@
+<h1>OCR</h1>
+<form #uploadForm = "ngForm" (ngSubmit) = "onSubmit(uploadForm.value)" enctype="multipart/form-data">
+    <input type="file" name="image" #imageInput accept="image/*" (change)="processFile(imageInput)" ngModel/>
+
+    <button id="btnSubmit" type="submit" value="Upload">Submit </button>
+</form>
