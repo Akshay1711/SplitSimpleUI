@@ -1,0 +1,29 @@
+<div class="login-form-container">
+  <form [formGroup]="loginForm" (ngSubmit) = "submitLoginForm(loginForm.value)">
+    <div>
+      <mat-form-field appearance="fill" class="form-elem">
+        <mat-label>Email ID</mat-label>
+        <input matInput placeholder="Email Address" formControlName="emailId">
+        <mat-error *ngIf="loginForm.controls['emailId'].errors">{{getEmailErr()}}</mat-error>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="fill" class="form-elem">
+        <mat-label>Password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-error *ngIf="loginForm.controls['password'].errors">{{getPasswordErr()}}</mat-error>
+        <!-- <mat-error *ngIf="!isPasswordValid">Password must contain at least one Uppercase letter one lower case letter a number and a special character.</mat-error> -->
+      </mat-form-field>
+      <span class="forgot">Forgot Password?</span>
+    </div>
+    <button type="submit" mat-raised-button color="primary" class="form-elem">Login</button>
+  </form>
+  <div class="signup">
+    <span class="signup-blocks">Don't have an account? </span>
+    <span class="forgot signup-blocks"> Sign up</span>
+  </div>
+</div>

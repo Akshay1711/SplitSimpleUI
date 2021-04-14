@@ -1,0 +1,28 @@
+.login-form-container {
+    width: 36vh;
+    padding: 1.2em;
+    margin: auto;
+    border: 0.5px solid #222;
+    border-radius: 5px;
+    position: relative;
+    top: 33%;
+    background-color: #fff;
+    box-shadow: 0px 5px 25px rgb(0 0 0 / 28%);
+}
+
+.form-elem {
+    width: 100%;
+    margin-bottom: 1.5em;
+}
+
+.signup {
+    text-align: center;
+}
+
+.forgot {
+    font-weight: 500;
+    color: #0077cc;
+    display: inline-block;
+    text-align: right;
+    margin-bottom: 0.5em;
+}
